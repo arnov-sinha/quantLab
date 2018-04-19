@@ -48,8 +48,9 @@ int tradeAnalysis::maxTradePrice(string indices){
     
     int maxPrice = INT_MIN;
     
-    for(MM::iterator it = pairSet.first; it != pairSet.second; ++it)
+    for(MM::iterator it = pairSet.first; it != pairSet.second; ++it){
         maxPrice = max(maxPrice,it->second);
+    }
     
     return maxPrice;
 }
@@ -85,6 +86,7 @@ int tradeAnalysis::weightedAveragePrice(string indices){
 
     return sum/total;
 }
+
 int tradeAnalysis::totalTrade(string indices){
     typedef multimap<string, int> MM;
     MM qty(ip.quantity);
