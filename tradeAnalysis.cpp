@@ -54,7 +54,7 @@ int tradeAnalysis::maxTradePrice(string indices){
     return maxPrice;
 }
 
-double tradeAnalysis::weightedAveragePrice(string indices){
+int tradeAnalysis::weightedAveragePrice(string indices){
     typedef multimap<string, int> MM;
     MM tradePrice(ip.price);
     MM qty(ip.quantity);
@@ -66,7 +66,7 @@ double tradeAnalysis::weightedAveragePrice(string indices){
     pairSet1 = tradePrice.equal_range(indices);
     pairSet2 = qty.equal_range(indices);
     
-    double sum=0.0;
+    int sum=0.0;
     vector<int> tp;
     vector<int> q;
     
@@ -82,7 +82,6 @@ double tradeAnalysis::weightedAveragePrice(string indices){
 
     return sum/q.size();
 }
-
 int tradeAnalysis::totalTrade(string indices){
     typedef multimap<string, int> MM;
     MM qty(ip.quantity);
