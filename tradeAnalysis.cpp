@@ -66,21 +66,24 @@ int tradeAnalysis::weightedAveragePrice(string indices){
     pairSet1 = tradePrice.equal_range(indices);
     pairSet2 = qty.equal_range(indices);
     
-    int sum=0.0;
+    int sum=0;
+    int total = 0;
     vector<int> tp;
     vector<int> q;
     
     for(MM::iterator it = pairSet1.first; it != pairSet1.second; ++it)
         tp.push_back(it->second);
     
-    for(MM::iterator it = pairSet2.first; it != pairSet2.second; ++it)
+    for(MM::iterator it = pairSet2.first; it != pairSet2.second; ++it){
         q.push_back(it->second);
+        total+=it->second;
+    }
     
     for(int i = 0; i < q.size(); i++ ){
         sum += tp[i] * q[i];
     }
 
-    return sum/q.size();
+    return sum/total;
 }
 int tradeAnalysis::totalTrade(string indices){
     typedef multimap<string, int> MM;
