@@ -48,11 +48,8 @@ int tradeAnalysis::maxTradePrice(string indices){
     
     int maxPrice = INT_MIN;
     
-    for(MM::iterator it = pairSet.first; it != pairSet.second; ++it){
-        cout<<"now:"<<it->second<<" ";
+    for(MM::iterator it = pairSet.first; it != pairSet.second; ++it)
         maxPrice = max(maxPrice,it->second);
-        cout<<maxPrice<<endl;
-    }
     
     return maxPrice;
 }
