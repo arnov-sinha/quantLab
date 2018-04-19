@@ -14,9 +14,8 @@ int main(int argc, char** argv) {
     tradeAnalysis ta("input.csv");
     
     vector<string> s(ta.ip.symbol);
-    cout<<"Max trade price: "<<ta.maxTradePrice("aga")<<endl;
-    cout<<"Total Trade: "<<ta.totalTrade("aga")<<endl;
-    /*sort(s.begin(),s.end());
+  
+    sort(s.begin(),s.end());
     s.erase( unique( s.begin(), s.end() ), s.end() );
     for(auto elem : s){
         of<<elem<<",";
@@ -28,15 +27,7 @@ int main(int argc, char** argv) {
         of<<",";
         of<<ta.weightedAveragePrice(elem);
         of<<"\n";
-    }*/
-    
-    /*
-    for(auto i : s){
-        cout<<ta.maxTimeGap(indices)<<endl;
-        cout<<ta.maxTradePrice(indices)<<endl;
-        cout<<ta.totalTrade(indices)<<endl;
-        cout<<ta.weightedAveragePrice(indices)<<endl;
-    }*/
+    }
     
     return 0;
 }
