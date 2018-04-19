@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <cstdlib>
 #include "csvReader.h"
@@ -34,8 +33,6 @@ int main(int argc, char** argv) {
         of<<ta.weightedAveragePrice(elem)<<",";
         of<<ta.maxTradePrice(elem)<<"\n";
     }
-    
-    
-    
+ 
     return 0;
 }
