@@ -15,7 +15,7 @@ public:
     unsigned long long maxTimeGap(string indices);
     int totalTrade(string indices);
     int maxTradePrice(string indices);
-    double weightedAveragePrice(string indices);
+    int weightedAveragePrice(string indices);
     
     csvReader ip;
 
